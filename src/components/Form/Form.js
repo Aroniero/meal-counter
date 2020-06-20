@@ -61,7 +61,7 @@ const Form = () => {
             <input
               className="input"
               type="number"
-              value="2.5"
+              defaultValue="2.5"
               placeholder="Wpisz tutaj cenę jednostkową obiadu"
             />
           </div>
@@ -84,15 +84,15 @@ const Form = () => {
             <input
               className="input"
               type="number"
-              value="2.5"
+              defaultValue="2.5"
               placeholder="Wpisz tutaj cenę jednostkową herbaty"
             />
           </div>
         </div>
       </div>
 
-      <div class="panel-block">
-        <button class="button is-link is-outlined is-fullwidth">
+      <div className="panel-block">
+        <button className="button is-link is-outlined is-fullwidth">
           Dodaj osobę
         </button>
       </div>
