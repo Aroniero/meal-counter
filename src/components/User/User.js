@@ -1,19 +1,59 @@
-import React from "react";
+import React, { useContext } from "react";
+import UserContext from "../../context/UserContext";
 
-const User = (props) => {
+const User = ({
+  lp,
+  id,
+  name,
+  surname,
+  classNum,
+  dinnerQuantity,
+  dinnerPrice,
+  dinnerSum,
+  teaQuantity,
+  teaPrice,
+  teaSum,
+  total,
+}) => {
+  const { users, removeUser } = useContext(UserContext);
+
   return (
     <tr>
-      <th>1</th>
-      <td>{props.name}</td>
-      <td>{props.surname}</td>
-      <td>{props.classNum}</td>
-      <td>{props.dinnerQuantity}</td>
-      <td>{props.dinnerPrice}</td>
-      <td>{props.dinnerSum}</td>
-      <td>{props.teaQuantity}</td>
-      <td>{props.teaPrice}</td>
-      <td>{props.teaSum}</td>
-      <td>{props.total}</td>
+      <th>{lp}</th>
+      <td>{name}</td>
+      <td>{surname}</td>
+      <td>{classNum}</td>
+
+      <td>{dinnerQuantity} szt.</td>
+      <td>{dinnerPrice} zł.</td>
+
+      <td>{dinnerSum.toFixed(2)} zł.</td>
+
+      <td>{teaQuantity} szt.</td>
+      <td>{teaPrice} zł.</td>
+      <td>{teaSum.toFixed(2)} zł.</td>
+
+      <td>{total.toFixed(2)} zł.</td>
+      {/* <td>
+        <button
+          className="button is-warning"
+          onClick={() => {
+            editUser(users, id);
+          }}
+        >
+          Edytuj
+        </button>
+      </td> */}
+      <td>
+        <button
+          className="button is-danger"
+          onClick={() => {
+            removeUser(users, id);
+          }}
+        >
+          Usuń
+        </button>
+      </td>
     </tr>
   );
 };
