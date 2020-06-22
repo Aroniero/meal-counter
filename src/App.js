@@ -41,7 +41,7 @@ const App = () => {
       id: "232311",
       name: "Ania",
       surname: "Annowska",
-      classNum: 0,
+      classNum: "Pracownik",
       dinnerQuantity: 22,
       dinnerPrice: 10,
       dinnerSum: 2,
@@ -56,7 +56,10 @@ const App = () => {
   // useEffect(() => {
   //   localStorage.setItem('users', JSON.stringify(users))
   // })
-
+  const [date, setDate] = useState({
+    dinnerMonth: "Styczeń",
+    teaMonth: "Styczeń",
+  });
   const addUser = (userData) => {
     const id = getId();
     const dinnerSum = userData.dinnerQuantity * userData.dinnerPrice;
@@ -80,6 +83,8 @@ const App = () => {
 
   const context = {
     users,
+    date,
+    setDate,
     addUser,
     removeUser,
     totalValuesOfUsers,

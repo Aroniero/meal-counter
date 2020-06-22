@@ -19,7 +19,7 @@ const UserListFoot = () => {
         <th>Suma</th>
         <th>X</th>
         <th>
-          <abbr title="Ilość Obiadów">{totalDinnerQuantity}</abbr>
+          <abbr title="Ilość Obiadów">{totalDinnerQuantity} szt.</abbr>
         </th>
         <th>
           <abbr title="Cena obiadów">X</abbr>
@@ -28,7 +28,7 @@ const UserListFoot = () => {
           <abbr title="Wartość obiadów">{totalDinnerSum} zł.</abbr>
         </th>
         <th>
-          <abbr title="Ilość herbat">{totalTeaQuantity}</abbr>
+          <abbr title="Ilość herbat">{totalTeaQuantity} szt.</abbr>
         </th>
         <th>
           <abbr title="Cena herbat">X</abbr>

@@ -45,7 +45,9 @@ const UserForm = () => {
               </div>
             </div>
             <div className="field">
-              <label className="label">Klasa</label>
+              <label className="label">
+                Wybierz numer klasy lub pracownika
+              </label>
               <div className="control">
                 <Field
                   name="classNum"
@@ -54,7 +56,8 @@ const UserForm = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                 >
-                  <option>Wybierz klasę</option>
+                  <option>Wybierz...</option>
+                  <option value="Pracownik">Pracownik</option>
                   <option value="0">0</option>
                   <option value="1">1</option>
                   <option value="2">2</option>

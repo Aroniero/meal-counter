@@ -16,7 +16,9 @@ const Card = ({
   return (
     <div className={styles.card}>
       <header className={styles.cardHeader}>
-        <p className={styles.cardHeader__Title}>Informacja dla nauczycieli</p>
+        <p className={styles.cardHeader__Title}>
+          Informacja dla {classNum === "Pracownik" ? "pracowników" : "uczniów"}
+        </p>
         <p>
           Uprzejmię proszę o wpłate należności z tytułu <br /> dożywiania do p.
           Aldony Godlewskiej
@@ -31,13 +33,13 @@ const Card = ({
         </div>
         <div className={styles.cardBody__Content}>
           <div className={styles.cardBody__Dinners}>
-            <p>Obiady (MIESIĄC): </p>
+            <p>Obiady (Październik): </p>
             <p>
               {dinnerQuantity} * {dinnerPrice} zł = {dinnerSum.toFixed(2)} zł
             </p>
           </div>
           <div className={styles.cardBody__Teas}>
-            <p>Herbaty (MIESIĄC): </p>
+            <p>Herbaty (Październik): </p>
             <p>
               {teaQuantity} * {teaPrice} zł = {teaSum.toFixed(2)} zł
             </p>
@@ -49,7 +51,7 @@ const Card = ({
         </div>
       </div>
       <footer className={styles.cardFooter}>
-        Wpłatę proszę dokonać do <br /> 19-06-2020r.
+        Wpłatę proszę dokonać do <br /> 19-06-2020 r.
       </footer>
     </div>
   );
