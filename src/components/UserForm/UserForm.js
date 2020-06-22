@@ -20,7 +20,7 @@ const UserForm = () => {
       }}
     >
       {({ handleChange, handleBlur }) => (
-        <Form className="container is-fluid mt-6 ">
+        <Form className="container is-narrow mt-6 ">
           <div className="field-body">
             <div className="field">
               <label className="label">Imię</label>

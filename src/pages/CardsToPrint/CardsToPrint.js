@@ -3,12 +3,7 @@ import Hero from "../../components/Hero/Hero";
 import CardList from "../../components/CardList/CardList";
 
 const CardsToPrint = () => {
-  return (
-    <>
-      <Hero />
-      <CardList />
-    </>
-  );
+  return <CardList />;
 };
 
 export default CardsToPrint;

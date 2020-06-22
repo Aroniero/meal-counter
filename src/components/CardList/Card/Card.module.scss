@@ -1,0 +1,40 @@
+.card {
+  border: 1px solid black;
+  padding: 13px 10px 13px;
+}
+
+.cardHeader {
+  text-align: center;
+}
+
+.cardHeader__Title,
+.cardFooter {
+  // font-size: 1.3rem;
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+}
+
+.cardBody {
+  border: 1px solid black;
+  padding: 0 10px;
+  margin: 0 20px;
+}
+
+.cardBody__Title,
+.cardBody__Dinners,
+.cardBody__Teas,
+.cardBody__Total {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardBody__Title,
+.cardBody__Teas {
+  border-bottom: 1px solid black;
+}
+
+.cardFooter {
+  margin-top: 4px;
+}
