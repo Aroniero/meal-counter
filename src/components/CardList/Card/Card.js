@@ -1,18 +1,20 @@
 import React from "react";
 import styles from "./Card.module.scss";
 
-const Card = ({
-  name,
-  surname,
-  classNum,
-  dinnerPrice,
-  dinnerQuantity,
-  dinnerSum,
-  teaPrice,
-  teaQuantity,
-  teaSum,
-  total,
-}) => {
+const Card = ({ user, date }) => {
+  const {
+    name,
+    surname,
+    classNum,
+    dinnerPrice,
+    dinnerQuantity,
+    dinnerSum,
+    teaPrice,
+    teaQuantity,
+    teaSum,
+    total,
+  } = user;
+  const { dinnerMonth, teaMonth } = date;
   return (
     <div className={styles.card}>
       <header className={styles.cardHeader}>
@@ -33,13 +35,13 @@ const Card = ({
         </div>
         <div className={styles.cardBody__Content}>
           <div className={styles.cardBody__Dinners}>
-            <p>Obiady (Październik): </p>
+            <p>Obiady ({dinnerMonth}): </p>
             <p>
               {dinnerQuantity} * {dinnerPrice} zł = {dinnerSum.toFixed(2)} zł
             </p>
           </div>
           <div className={styles.cardBody__Teas}>
-            <p>Herbaty (Październik): </p>
+            <p>Herbaty ({teaMonth}): </p>
             <p>
               {teaQuantity} * {teaPrice} zł = {teaSum.toFixed(2)} zł
             </p>

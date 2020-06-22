@@ -7,7 +7,6 @@ const DateForm = () => {
   const handleMonthChange = (e) => {
     setDate({ ...date, [e.target.name]: e.target.value });
   };
-  console.log(date);
 
   return (
     <div className="field-body container mt-5">

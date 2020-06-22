@@ -4,14 +4,12 @@ import styles from "./CardList.module.scss";
 import Card from "./Card/Card";
 
 const CardList = () => {
-  const { users } = useContext(UserContext);
-
-  console.log(users);
+  const { users, date } = useContext(UserContext);
 
   return (
     <div className={styles.cardContainer}>
       {users.map((user) => (
-        <Card key={user.id} {...user} />
+        <Card key={user.id} user={user} date={date} />
       ))}
     </div>
   );
