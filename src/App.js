@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import "./App.css";
-import UserForm from "./components/UserForm/UserForm";
-import Hero from "./components/Hero/Hero";
-import UserList from "./components/UserList/UserList";
+import Home from "./pages/Home/Home";
+import TableToPrint from "./pages/TableToPrint/TableToPrint";
+import CardsToPrint from "./pages/CardsToPrint/CardsToPrint";
 import UserContext from "./context/UserContext";
 import { getId } from "./utils/getId";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
 
 const App = () => {
   // OGARNĄĆ LOCAL STORAGE
@@ -86,11 +87,13 @@ const App = () => {
 
   return (
     <UserContext.Provider value={context}>
-      <div className="container is-fluid">
-        <Hero />
-        <UserForm />
-        <UserList />
-      </div>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/tableToPrint" component={TableToPrint} />
+          <Route path="/cardsToPrint" component={CardsToPrint} />
+        </Switch>
+      </BrowserRouter>
     </UserContext.Provider>
   );
 };

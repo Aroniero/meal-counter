@@ -1,11 +1,12 @@
 import React from "react";
 import User from "../../User/User";
 
-const UserListBody = ({ counter, users }) => {
+const UserListBody = ({ counter, users, printTable }) => {
   return (
     <tbody>
       {users.map((user) => (
         <User
+          printTable={printTable}
           key={user.id}
           lp={counter++}
           id={user.id}

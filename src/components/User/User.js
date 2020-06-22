@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import UserContext from "../../context/UserContext";
 
 const User = ({
+  printTable,
   lp,
   id,
   name,
@@ -44,16 +45,21 @@ const User = ({
           Edytuj
         </button>
       </td> */}
-      <td>
-        <button
-          className="button is-danger"
-          onClick={() => {
-            removeUser(users, id);
-          }}
-        >
-          Usuń
-        </button>
-      </td>
+
+      {printTable ? (
+        <td></td>
+      ) : (
+        <td>
+          <button
+            className="button is-danger"
+            onClick={() => {
+              removeUser(users, id);
+            }}
+          >
+            Usuń
+          </button>
+        </td>
+      )}
     </tr>
   );
 };

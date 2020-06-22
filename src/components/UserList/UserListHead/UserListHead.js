@@ -1,6 +1,7 @@
 import React from "react";
+import styles from "./UserListHead.module.scss";
 
-const UserListHead = () => (
+const UserListHead = ({ printTable }) => (
   <thead>
     <tr>
       <th>
@@ -30,6 +31,13 @@ const UserListHead = () => (
         <abbr title="Wartość herbat">W. her.</abbr>
       </th>
       <th>Suma</th>
+      <th>
+        {printTable ? (
+          <abbr className={styles.signatureCell}>Podpis</abbr>
+        ) : (
+          "Suma"
+        )}
+      </th>
     </tr>
   </thead>
 );
