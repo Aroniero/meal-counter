@@ -8,10 +8,33 @@ const DateForm = () => {
     setDate({ ...date, [e.target.name]: e.target.value });
   };
 
+  const handleListDateChange = (e) => {
+    const dateArr = e.target.value.split("-").reverse();
+    const month = dateArr[1];
+    const year = dateArr[2];
+    const listDate = `${month}/${year}`;
+    setDate({ ...date, [e.target.name]: listDate });
+  };
+
   return (
     <div className="field-body container mt-5">
       <div className="field">
-        <label className="label">Wybierz miesiąc dla obiadów: </label>
+        <label className="label">Wybierz datę wykonania zestawienia: </label>
+        <div className="control">
+          <input
+            className="input"
+            type="date"
+            name="listDate"
+            onChange={(e) => {
+              handleListDateChange(e);
+            }}
+          />
+        </div>
+      </div>
+      <div className="field">
+        <label className="label">
+          Wybierz miesiąc dla obiadów na karteczkach:
+        </label>
         <div className="control">
           <div className="select">
             <select
@@ -39,7 +62,9 @@ const DateForm = () => {
         </div>
       </div>
       <div className="field">
-        <label className="label">Wybierz miesiąc dla herbat: </label>
+        <label className="label">
+          Wybierz miesiąc dla herbat na karteczkach:
+        </label>
         <div className="control">
           <div className="select">
             <select

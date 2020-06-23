@@ -59,6 +59,7 @@ const App = () => {
   const [date, setDate] = useState({
     dinnerMonth: "Styczeń",
     teaMonth: "Styczeń",
+    listDate: "06/2020",
   });
   const addUser = (userData) => {
     const id = getId();
