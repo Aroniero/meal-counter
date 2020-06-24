@@ -10,10 +10,11 @@ const DateForm = () => {
 
   const handleListDateChange = (e) => {
     const dateArr = e.target.value.split("-").reverse();
+    const day = dateArr[0];
     const month = dateArr[1];
     const year = dateArr[2];
-    const listDate = `${month}/${year}`;
-    setDate({ ...date, [e.target.name]: listDate });
+    const fullDate = `${day}/${month}/${year}`;
+    setDate({ ...date, [e.target.name]: fullDate });
   };
 
   return (
@@ -29,6 +30,23 @@ const DateForm = () => {
               handleListDateChange(e);
             }}
           />
+          Wybrana data: {date.listDate}
+        </div>
+      </div>
+      <div className="field">
+        <label className="label">
+          Wybierz datę do kiedy należy dokonać wpłatę (widoczne na karteczkach):
+        </label>
+        <div className="control">
+          <input
+            className="input"
+            type="date"
+            name="cardDate"
+            onChangeCapture={(e) => {
+              handleListDateChange(e);
+            }}
+          />
+          Wybrana data: {date.cardDate}
         </div>
       </div>
       <div className="field">

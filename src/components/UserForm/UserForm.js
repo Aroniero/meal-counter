@@ -7,13 +7,13 @@ const UserForm = () => {
   return (
     <Formik
       initialValues={{
-        name: "",
-        surname: "",
-        classNum: "",
-        dinnerQuantity: "",
-        dinnerPrice: "",
-        teaQuantity: "",
-        teaPrice: "",
+        name: "John",
+        surname: "Doe",
+        classNum: "0",
+        dinnerQuantity: 2,
+        dinnerPrice: 2.5,
+        teaQuantity: 2,
+        teaPrice: 2.6,
       }}
       onSubmit={(values) => {
         addUser(values);
@@ -92,7 +92,6 @@ const UserForm = () => {
                   type="number"
                   placeholder="Wpisz tutaj cenę jednostkową obiadu"
                   name="dinnerPrice"
-                  // value="2.5"
                 />
               </div>
             </div>
@@ -117,7 +116,6 @@ const UserForm = () => {
                   type="number"
                   placeholder="Wpisz tutaj cenę jednostkową herbaty"
                   name="teaPrice"
-                  // value="2.5"
                 />
               </div>
             </div>

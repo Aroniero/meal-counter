@@ -2,7 +2,8 @@ import React, { useContext } from "react";
 import UserContext from "../../context/UserContext";
 
 const User = ({
-  printTable,
+  studentsTable,
+  workersTable,
   lp,
   id,
   name,
@@ -46,12 +47,12 @@ const User = ({
         </button>
       </td> */}
 
-      {printTable ? (
+      {studentsTable || workersTable ? (
         <td></td>
       ) : (
         <td>
           <button
-            className="button is-danger"
+            className="button is-small bold is-outlined is-danger"
             onClick={() => {
               removeUser(users, id);
             }}

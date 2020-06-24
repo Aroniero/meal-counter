@@ -7,7 +7,6 @@ const Hero = () => {
       <div className="hero-body">
         <div className="container has-text-centered">
           <h1 className="title">Meal Counter</h1>
-          {/* <h2 className="subtitle">Subtitle</h2> */}
         </div>
       </div>
 
@@ -21,8 +20,13 @@ const Hero = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/tableToPrint" activeClassName="is-active">
-                  Tabela do drukowania
+                <NavLink to="/studentsTable" activeClassName="is-active">
+                  Tabela do drukowania dla uczniów
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/workersTable" activeClassName="is-active">
+                  Tabela do drukowania dla pracowników
                 </NavLink>
               </li>
               <li>
