@@ -14,7 +14,7 @@ const Card = ({ user, date }) => {
     teaSum,
     total,
   } = user;
-  const { dinnerMonth, teaMonth } = date;
+  const { dinnerMonth, teaMonth, cardDate } = date;
   return (
     <div className={styles.card}>
       <header className={styles.cardHeader}>
@@ -31,7 +31,10 @@ const Card = ({ user, date }) => {
           <p>
             {name} {surname}
           </p>
-          <p>Klasa {classNum}</p>
+          <p>
+            <strong>{isNaN(classNum) ? "Rola: " : "Klasa nr: "}</strong>
+            {classNum}
+          </p>
         </div>
         <div className={styles.cardBody__Content}>
           <div className={styles.cardBody__Dinners}>
@@ -53,7 +56,7 @@ const Card = ({ user, date }) => {
         </div>
       </div>
       <footer className={styles.cardFooter}>
-        Wpłatę proszę dokonać do <br /> 19-06-2020 r.
+        Wpłatę proszę dokonać do <br /> {cardDate} r.
       </footer>
     </div>
   );

@@ -54,7 +54,7 @@ const UserList = ({ studentsTable, studentList, workersTable, users }) => {
               <abbr>
                 {studentList && "Numer klasy lub funkcja"}
                 {studentsTable && "Nr klasy"}
-                {workersTable && "Pracownik"}
+                {workersTable && "Rola"}
               </abbr>
             </th>
             <th>
@@ -76,7 +76,11 @@ const UserList = ({ studentsTable, studentList, workersTable, users }) => {
               <abbr title="Wartość herbat">W. her.</abbr>
             </th>
             <th>Suma</th>
-            {(studentsTable || workersTable) && <th>Podpis</th>}
+            {(studentsTable || workersTable) && (
+              <th>
+                <abbr className={styles.signUp}>Podpis</abbr>
+              </th>
+            )}
           </tr>
         </thead>
         <tbody>

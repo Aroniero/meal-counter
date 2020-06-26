@@ -8,7 +8,7 @@ const WorkersTable = () => {
   const [workers, setWorkers] = useState([]);
 
   useEffect(() => {
-    setWorkers(users.filter((user) => user.classNum === "Pracownik"));
+    setWorkers(users.filter((user) => isNaN(user.classNum)));
   }, [users]);
 
   return <UserList workersTable users={workers} />;

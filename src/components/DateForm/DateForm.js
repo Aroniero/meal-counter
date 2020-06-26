@@ -5,16 +5,24 @@ const DateForm = () => {
   const { date, setDate } = useContext(UserContext);
 
   const handleMonthChange = (e) => {
-    setDate({ ...date, [e.target.name]: e.target.value });
+    const currDate = { ...date, [e.target.name]: e.target.value };
+
+    localStorage.setItem("date", JSON.stringify(currDate));
+    setDate(currDate);
   };
 
   const handleListDateChange = (e) => {
+    // Creating new tamplate for date instead of having YYYY/MM/DD
     const dateArr = e.target.value.split("-").reverse();
     const day = dateArr[0];
     const month = dateArr[1];
     const year = dateArr[2];
     const fullDate = `${day}/${month}/${year}`;
-    setDate({ ...date, [e.target.name]: fullDate });
+
+    // Adding new date to state aswell as in localstorage
+    const currDate = { ...date, [e.target.name]: fullDate };
+    localStorage.setItem("date", JSON.stringify(currDate));
+    setDate(currDate);
   };
 
   return (

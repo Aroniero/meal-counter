@@ -9,7 +9,7 @@ const StudentsTable = () => {
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
-    setStudents(users.filter((user) => user.classNum !== "Pracownik"));
+    setStudents(users.filter((user) => !isNaN(user.classNum)));
   }, [users]);
 
   return <UserList class={styles.position} studentsTable users={students} />;
